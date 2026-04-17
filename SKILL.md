@@ -52,6 +52,7 @@ Default to `Flow diagnosis` unless the user's request clearly points to one of t
 
 Always enforce these rules:
 
+- Match the user's current working language. Do not switch languages unless the user asks.
 - Start with `who + context + goal`. Never start from screens or features.
 - Use time progression as the main axis. Do not organize by page.
 - Each stage must include behavior, intention, psychology or emotion, system response, friction, and opportunity.
@@ -214,6 +215,13 @@ Only expand into `Matrix`, `PPT outline`, or `Visualization handoff` when the us
 
 If the user asks for a journey-map-style deliverable, do not jump directly into layout instructions. First stabilize the scenario definition, stage model, and priority judgment.
 
+If the user asks for an actual PPT or slide deck artifact:
+
+- Keep this skill as the analysis layer and hand off rendering to a PowerPoint or PPT skill.
+- Match the deck language to the user's current language.
+- Default to a radical-minimal deck style unless the user explicitly asks for another visual system.
+- Treat the journey-map slide as an information design problem, not a decorative infographic.
+
 ## Visualization Handoff
 
 If this analysis will later be rendered as a journey map, provide a compressed handoff layer in addition to the main analysis.
@@ -225,6 +233,7 @@ Recommended handoff fields by stage:
 - User actions
 - User thoughts
 - Emotion trend or score
+- Emotion cue or emoji, if it helps make the emotional shift legible
 - Pain points
 - Opportunities
 - Target experience
@@ -248,6 +257,12 @@ If the user asks for a presentation-ready artifact, include both:
 
 - The core analytical judgment
 - The compressed handoff structure for the visualization layer
+
+If the final output is a PPT or slide deck, also include:
+
+- The intended deck language
+- The desired rendering style, if known
+- Whether the emotion row should be shown as text only, score only, or curve plus emoji
 
 Do not include matrix rows, PPT framing, or visualization handoff by default.
 
@@ -297,6 +312,21 @@ For each recommendation, include:
 ### Technical Capability Requirements
 
 Group requirements by perception, data, reasoning, execution, interaction support, governance, and performance.
+
+## PPT Rendering Guidance
+
+Use this guidance when the journey will be turned into a deck:
+
+- Prefer a radical-minimal layout: white background, restrained accent use, thin solid rules, low decoration, strong hierarchy.
+- Keep the journey slide readable first. Reduce rows before reducing legibility.
+- Default to the compact matrix unless the user clearly needs the expanded journey-map view.
+- Match the output language to the user's current language, including stage labels and emotional cues.
+- When emotion is an important part of the story, prefer a visual emotion row:
+  - `curve`: show emotional movement across stages
+  - `score`: keep the underlying relative score visible or inferable
+  - `emoji`: use sparingly to improve instant readability
+- Use emoji only as emotional cues, not as decoration.
+- If another skill is rendering the deck, pass these constraints explicitly in the handoff rather than assuming them.
 
 ## QA Checklist
 
