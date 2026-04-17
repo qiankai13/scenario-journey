@@ -152,6 +152,11 @@ Use this when the scenario explicitly involves system intelligence or cross-app 
 Use this when the user wants a slide-ready output.
 
 ```md
+Deck rules
+- Language: match the user's current language
+- Style: radical-minimal by default unless another style is requested
+- Emotion row: prefer curve + relative score + light emoji cues when emotion progression matters
+
 1. Slide 1: Scenario definition
    User, context, goal, success criteria, constraints
 
@@ -181,6 +186,10 @@ Use this when another skill or tool will turn the analysis into a visual journey
 ```md
 ## Visualization Handoff
 
+- Language:
+- Rendering style:
+- Emotion display mode: text only / score only / curve + emoji
+
 ### Stage 1: [Name]
 
 - Touchpoints:
@@ -188,6 +197,7 @@ Use this when another skill or tool will turn the analysis into a visual journey
 - Actions:
 - Thoughts:
 - Emotion trend or score:
+- Emotion cue or emoji:
 - Pain points:
 - Opportunities:
 - One-line tension:
@@ -224,4 +234,6 @@ Use this before final delivery when the output must go into a document, review, 
 - If AI is involved, are intervention timing and user control boundaries explicit?
 - Do the technical requirements clearly come from the journey analysis?
 - Do the technical requirements map back to the key journey problems rather than forming a separate checklist?
+- If this is for PPT, does the output language match the user's current language?
+- If emotion is shown visually, is the curve or score progression consistent with the written judgments?
 ```
