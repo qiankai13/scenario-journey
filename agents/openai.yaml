@@ -1,0 +1,7 @@
+interface:
+  display_name: "智能场景体验架构师"
+  short_description: "把模糊场景拆成可设计、可决策、可评审的体验旅程与技术诉求"
+  default_prompt: "Use $scenario-journey to turn this vague scenario into a stage-based journey, key tensions, AI intervention points, and technical capability requirements."
+
+policy:
+  allow_implicit_invocation: true
