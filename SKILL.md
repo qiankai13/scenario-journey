@@ -37,6 +37,17 @@ Do not use this skill for:
 
 If the user explicitly wants a visual deck or slide output, keep this skill as the analysis layer first, then hand off to a presentation or PPT skill for the rendering layer.
 
+## Mode Router
+
+Before doing any deep analysis, identify which mode best matches the request.
+
+- `Flow diagnosis`: analyze an existing journey, find breakpoints, and prioritize fixes
+- `Scenario design`: build a journey from a vague product or experience idea
+- `AI intervention design`: determine when the system should recommend, confirm, automate, or stay silent
+- `Review handoff`: compress an existing analysis into matrix, workshop, or PPT-ready output
+
+Default to `Flow diagnosis` unless the user's request clearly points to one of the other three.
+
 ## Non-Negotiables
 
 Always enforce these rules:
@@ -88,6 +99,20 @@ Useful optional inputs:
 - Desired output mode: prose, matrix, PPT, or AI-native design view
 
 If the input is incomplete, infer cautiously and mark assumptions rather than pretending certainty.
+
+### 1.6. Apply the mobile context lens when relevant
+
+If the scenario happens on mobile, explicitly evaluate these constraints:
+
+- `Entry point`: notification, widget, app launch, deep link, share sheet, voice, system surface
+- `Device posture`: one-hand use, two-hand use, walking, commuting, interrupted attention
+- `Interruption risk`: calls, messages, background switching, lock screen, task resume
+- `Network condition`: weak network, offline tolerance, partial loading, retries
+- `Privacy exposure`: public setting, shoulder surfing, lock-screen sensitivity, shared screens
+- `Permission friction`: notifications, location, camera, microphone, photos, system privileges
+- `Resume path`: how the user returns after interruption without losing context
+
+Do not treat these as implementation details. On mobile, they often determine whether the journey feels smooth or fragile.
 
 ### 2. Break the journey into 4-7 stages
 
@@ -183,6 +208,10 @@ Choose the lightest format that still supports the decision.
 - `PPT outline`: best when the analysis will be turned into slides
 - `Visualization handoff`: best when another skill or tool will render the final journey map
 
+Default to `Analytical prose`.
+
+Only expand into `Matrix`, `PPT outline`, or `Visualization handoff` when the user explicitly asks for those formats or when downstream presentation needs are already clear.
+
 If the user asks for a journey-map-style deliverable, do not jump directly into layout instructions. First stabilize the scenario definition, stage model, and priority judgment.
 
 ## Visualization Handoff
@@ -219,6 +248,8 @@ If the user asks for a presentation-ready artifact, include both:
 
 - The core analytical judgment
 - The compressed handoff structure for the visualization layer
+
+Do not include matrix rows, PPT framing, or visualization handoff by default.
 
 ## Default Output Shape
 
@@ -257,6 +288,12 @@ Must include:
 
 Give a prioritized set of recommendations tied to the judged stages.
 
+For each recommendation, include:
+
+- Expected impact
+- Relative effort
+- Key dependencies or enabling conditions
+
 ### Technical Capability Requirements
 
 Group requirements by perception, data, reasoning, execution, interaction support, governance, and performance.
@@ -272,6 +309,7 @@ Before finalizing, verify:
 - The highest-priority stage is explicit and defended
 - AI intervention timing and boundaries are explicit when AI is involved
 - Technical capability requirements are derived from the journey, not pasted in as a generic checklist
+- The technical requirements clearly map back to the main journey problems rather than sitting as a parallel list
 - If a matrix or PPT handoff is included, the compressed fields still match the main analytical judgment
 
 ## AI-Native Extension
@@ -283,6 +321,8 @@ If the scenario involves AI or system intelligence, add these fields where usefu
 - `AI action`: what the system should do
 - `Risk`: what can go wrong
 - `User control point`: where the user authorizes, confirms, edits, or interrupts
+- `Trust threshold`: how much autonomy the user is likely to tolerate at this step
+- `Reversibility`: how easily the user can undo, correct, or recover from the AI action
 
 Also judge intervention style:
 
