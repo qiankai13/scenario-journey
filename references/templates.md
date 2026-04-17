@@ -46,9 +46,26 @@ Use these output patterns based on the user's requested format.
 
 ## Design Recommendations
 
-- Recommendation 1:
-- Recommendation 2:
-- Recommendation 3:
+### Recommendation 1
+
+- Action:
+- Expected impact:
+- Relative effort:
+- Dependencies:
+
+### Recommendation 2
+
+- Action:
+- Expected impact:
+- Relative effort:
+- Dependencies:
+
+### Recommendation 3
+
+- Action:
+- Expected impact:
+- Relative effort:
+- Dependencies:
 
 ## Technical Capability Requirements
 
@@ -78,6 +95,10 @@ Use this when the user input is vague and you need to show what is known vs infe
 
 Use this when the user asks for a matrix, whiteboard-ready view, or PPT-friendly journey table.
 
+Default to the compact version below unless the user explicitly needs the expanded journey-map view.
+
+### Compact Matrix
+
 ```md
 | Attribute \\ Stage | Stage 1: Trigger | Stage 2: Enter | Stage 3: Explore | Stage 4: Decide | Stage 5: Execute | Stage 6: Complete / Review |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -91,7 +112,9 @@ Use this when the user asks for a matrix, whiteboard-ready view, or PPT-friendly
 | Technical requirement |  |  |  |  |  |  |
 ```
 
-If the matrix is for a more classic journey-map presentation, add these optional rows:
+### Expanded Matrix
+
+If the matrix is for a more classic journey-map presentation, add these rows:
 
 ```md
 | Touchpoints |  |  |  |  |  |  |
@@ -99,6 +122,7 @@ If the matrix is for a more classic journey-map presentation, add these optional
 | Thoughts / Quotes |  |  |  |  |  |  |
 | Emotion trend / score |  |  |  |  |  |  |
 | Target experience |  |  |  |  |  |  |
+| One-line tension |  |  |  |  |  |  |
 ```
 
 ## 3. AI-Native Stage Template
@@ -119,6 +143,8 @@ Use this when the scenario explicitly involves system intelligence or cross-app 
 - AI action:
 - Risk:
 - User control point:
+- Trust threshold:
+- Reversibility:
 ```
 
 ## 4. PPT Structure Template
@@ -164,6 +190,7 @@ Use this when another skill or tool will turn the analysis into a visual journey
 - Emotion trend or score:
 - Pain points:
 - Opportunities:
+- One-line tension:
 - Target experience:
 - Technical support needed:
 ```
@@ -196,4 +223,5 @@ Use this before final delivery when the output must go into a document, review, 
 - Is the priority stage explicit?
 - If AI is involved, are intervention timing and user control boundaries explicit?
 - Do the technical requirements clearly come from the journey analysis?
+- Do the technical requirements map back to the key journey problems rather than forming a separate checklist?
 ```
